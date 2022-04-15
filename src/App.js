@@ -9,6 +9,8 @@ import { useStateValue } from "./StateProvider";
 
 const s = new SpotifyWebApi();
 
+console.log(Object.getPrototypeOf(s));
+
 function App() {
   const [{ token }, dispatch] = useStateValue();
 
@@ -26,7 +28,7 @@ function App() {
         token: _token,
       });
 
-      s.getPlaylist("37i9dQZF1EVHGWrwldPRtj").then((response) =>
+      s.getPlaylist("1m0mHTIRqTRtmnmiQvggk3").then((response) =>  
         dispatch({
           type: "SET_DISCOVER_WEEKLY",
           discover_weekly: response,
@@ -70,53 +72,3 @@ function App() {
 }
 
 export default App;
-
-// const spotify = new SpotifyWebApi();
-
-// function App() {
-//   // const [token, setToken] = useState(null);
-//   const [{ token }, dispatch] = useStateValue();
-
-//   useEffect(() => {  
-//     const hash = getTokenFromResponse();
-//     window.location.hash = "";
-//     const _token = hash.access_token;
-
-//     if(_token) {
-//       setToken(_token);
-
-//       spotify.setAccessToken(_token);
-
-//       dispatch({
-//         type: "SET_TOKEN",
-//         token: _token,
-//       });
-
-//       spotify.getMe().then(user => {
-//         dispatch({
-//           type: "SET_USER",
-//           user
-//         });
-//       })
-//     }
-
-//     console.log('I HAVE A TOKEN -> ', token);
-//   }, []);
-
-//   console.log('PERSON IS' , user);
-  
-//   return (
-//     <div className="app">
-//       {
-//         token ? (
-//           <Player />
-//         ) : (
-//           <Login />
-//         )
-//       }
-
-//     </div>
-//   );
-// }
-
-// export default App;
