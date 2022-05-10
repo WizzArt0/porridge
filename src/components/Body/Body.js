@@ -35,6 +35,7 @@ function Body({ spotify }) {
         uris: [`spotify:track:${id}`],
       })
       .then((res) => {
+        
         spotify.getMyCurrentPlayingTrack().then((r) => {
           dispatch({
             type: "SET_ITEM",
@@ -75,6 +76,7 @@ function Body({ spotify }) {
           <SongRow playSong={playSong} track={item.track} />
         ))}
       </div>
+      
     </div>
   );
 }

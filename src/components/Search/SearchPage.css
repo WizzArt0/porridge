@@ -1,0 +1,39 @@
+.track {
+    display: flex;
+    margin: 15px;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .search__results {
+    /* display: flex; */
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-top: 0.5rem; 
+    margin-bottom: 0.5rem;
+    position: absolute;
+  }
+  
+  .track_info {
+    margin-left: 12px;
+  }
+
+  .search__input {
+    flex: 0.5;
+    display: flex;
+    background-color: white;
+    padding: 10px;
+    border-radius: 30px;
+    color: gray;
+    align-items: center;
+  }
+  
+  .search__input > input {
+    border: none;
+    width: 100%;
+  }
+
+.search__page {
+    display: flex;
+    justify-content: space-between;
+}

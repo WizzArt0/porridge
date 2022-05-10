@@ -8,10 +8,11 @@ export const initialState = {
   top_artists: null,
   playing: false,
   item: null,
+  searchTerms: '',
 };
 
 const reducer = (state, action) => {
-  console.log(action);
+  // console.log(action);
   switch (action.type) {
     case "SET_USER":
       return {
@@ -53,6 +54,12 @@ const reducer = (state, action) => {
       return {
         ...state,
         spotify: action.spotify,
+      };
+
+    case "SET_SEARCH_TERM":
+      return {
+        ...state,
+        searchTerms: action.searchTerms,
       };
 
     case "SET_PLAYLISTS":
